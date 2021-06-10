@@ -46,7 +46,7 @@ spec:
               mountPath: /config
     {{- end }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Release.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -109,4 +109,4 @@ spec:
         {{- end }}
         - name: configmap
           configMap:
-            name: {{ include "synapse-node.name" . }}-{{ .Release.Name }}
+            name: {{ include "synapse-node.fullname" . }}-{{ .Release.Name }}
