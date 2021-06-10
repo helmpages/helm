@@ -3,6 +3,16 @@ entries:
   synapse-node:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-06-10T21:14:29.883954341Z"
+    description: A Helm chart for Kubernetes
+    digest: a7dfce95035b323a85531ca1805a736f92d65fe65e5dc64a4c218a90b15385dc
+    name: synapse-node
+    type: application
+    urls:
+    - https://github.com/0xnero/helm/releases/download/synapse-node-0.1.92/synapse-node-0.1.92.tgz
+    version: 0.1.92
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-06-10T20:49:18.036104251Z"
     description: A Helm chart for Kubernetes
     digest: f260ac53a68bef751e09fa2a64f51d20ee6f5a959375ee0c9bb956fa32adc580
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/0xnero/helm/releases/download/synapse-node-0.1.7/synapse-node-0.1.7.tgz
     version: 0.1.7
-generated: "2021-06-10T20:49:18.036119551Z"
+generated: "2021-06-10T21:14:29.883970742Z"
