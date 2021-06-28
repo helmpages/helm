@@ -91,3 +91,7 @@ service:
 configurationFile:
   example.env: |-
     NODE=true
+
+mysql:
+  enabled:
+    false
