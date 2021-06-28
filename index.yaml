@@ -3,6 +3,22 @@ entries:
   synapse-node:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-06-28T22:50:42.261590169Z"
+    dependencies:
+    - alias: mysql
+      condition: mysql.enabled
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 0.x.x
+    description: A Helm chart for Kubernetes
+    digest: c333ac4046d03b4c70436cb084420ad8b532744139f8c00956f624b2f288284a
+    name: synapse-node
+    type: application
+    urls:
+    - https://github.com/0xnero/helm/releases/download/synapse-node-0.1.94/synapse-node-0.1.94.tgz
+    version: 0.1.94
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-06-13T07:10:01.352811768Z"
     description: A Helm chart for Kubernetes
     digest: 5c424b4e6efb7636b54397788e84ca7ffb5c95dd026d8fa95975f701a07c6ca4
@@ -51,4 +67,4 @@ entries:
     urls:
     - https://github.com/0xnero/helm/releases/download/synapse-node-0.1.7/synapse-node-0.1.7.tgz
     version: 0.1.7
-generated: "2021-06-13T07:10:01.352943877Z"
+generated: "2021-06-28T22:50:42.26164167Z"
