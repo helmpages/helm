@@ -3,12 +3,12 @@ entries:
   tm-node:
   - apiVersion: v2
     appVersion: 0.14.0
-    created: "2021-11-30T02:47:20.102665416Z"
+    created: "2021-11-30T02:50:08.164068272Z"
     description: A Helm chart for Kubernetes
-    digest: 6110db9d7d93b0a43d00cab6cac983123ec3b001bc17233dedf32907c3f0af0f
+    digest: e16d30432ccfcb1c30a5ce723f19395d0f2a98fd3f1125351ec2a493d406fc54
     name: tm-node
     type: application
     urls:
-    - https://github.com/helmpages/helm/releases/download/tm-node-0.61.0/tm-node-0.61.0.tgz
-    version: 0.61.0
-generated: "2021-11-30T02:47:20.102778118Z"
+    - https://github.com/helmpages/helm/releases/download/tm-node-0.62.0/tm-node-0.62.0.tgz
+    version: 0.62.0
+generated: "2021-11-30T02:50:08.164074272Z"
