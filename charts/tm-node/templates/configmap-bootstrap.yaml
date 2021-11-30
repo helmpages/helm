@@ -1,0 +1,18 @@
+{{if (default .Values.bootstrap.enabled true)}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: syn-node-config-bootstrap
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "syn-node.labels" . | nindent 4 }}
+data:
+  node.sh: |
+    #!/bin/bash
+    set -x
+    cat "/boot-keys/key-pass.txt" | { cat ; echo ; } | /bin/syn --home="$SYN_HOME" keys import --keyring-backend="$SYN_KEYRING_BACKEND"  "$SYN_FROM" "/boot-keys/key.txt"
+    cp /bootstrap/genesis.json $SYN_HOME/config/genesis.json
+    /bin/syn init --chain-id "$SYN_CHAIN_ID" "$SYN_MONIKER"
+    /bin/syn validate-genesis
+    /bin/syn start
+{{ end }}

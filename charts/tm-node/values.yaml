@@ -1,0 +1,92 @@
+# Default values for syn-node.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/ovrclk/syn
+  pullPolicy: IfNotPresent
+  tag: stable
+
+# Mandatory Values
+from:
+key:
+keysecret:
+chainid:
+keyring_backend: "test"
+home: "/root/.syn"
+
+# Set Values to run a single Akash node connected to an existing network
+syn_node:
+  moniker:
+  node:
+  net:
+  peers:
+
+# Enable to run a 4 node Akash network from bootstrap
+bootstrap:
+  enabled: false
+  validator1:
+  validator2:
+  validator3:
+  validator4:
+  priv_key_1:
+  priv_key_2:
+  priv_key_3:
+  priv_key_4:
+  genesis:
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+ingress:
+  enabled: false
+  classname: nginx
+  domain:
+  annotations:
+    nginx.ingress.kubernetes.io/limit-rps: '10'
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
