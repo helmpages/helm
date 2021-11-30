@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  syn-node:
+  tm-node:
   - apiVersion: v2
     appVersion: 0.14.0
-    created: "2021-11-30T02:45:09.982354278Z"
+    created: "2021-11-30T02:47:20.102665416Z"
     description: A Helm chart for Kubernetes
-    digest: 55ac067b1bf859f069f923ba7994785991d05ea8c71e8d80c02ae97000c3bc50
-    name: syn-node
+    digest: 6110db9d7d93b0a43d00cab6cac983123ec3b001bc17233dedf32907c3f0af0f
+    name: tm-node
     type: application
     urls:
-    - https://github.com/helmpages/helm/releases/download/syn-node-0.61.0/syn-node-0.61.0.tgz
+    - https://github.com/helmpages/helm/releases/download/tm-node-0.61.0/tm-node-0.61.0.tgz
     version: 0.61.0
-generated: "2021-11-30T02:45:09.982372978Z"
+generated: "2021-11-30T02:47:20.102778118Z"
