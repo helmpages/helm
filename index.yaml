@@ -17,6 +17,31 @@ entries:
     urls:
     - https://github.com/helmpages/helm/releases/download/synapse-node-0.1.96/synapse-node-0.1.96.tgz
     version: 0.1.96
+  tender:
+  - apiVersion: v1
+    appVersion: 0.17.1
+    created: "2021-12-02T21:38:03.070246668Z"
+    description: Bitcoin is an innovative payment network and a new kind of money.
+    digest: 6466c98cae83d4e35245cc2ae24a12f112012bff3823c55b25ace613bcafd785
+    home: https://bitcoin.org/
+    icon: https://bitcoin.org/img/icons/logotop.png
+    keywords:
+    - bitcoind
+    - cryptocurrency
+    - blockchain
+    maintainers:
+    - email: daniel@arilot.com
+      name: daniel-yavorovich
+    - email: shiyanval@gmail.com
+      name: govale
+    name: tender
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/kuberstack/bitcoind
+    - https://github.com/kylemanna/docker-bitcoind
+    urls:
+    - https://github.com/helmpages/helm/releases/download/tender-0.2.3/tender-0.2.3.tgz
+    version: 0.2.3
   tm-node:
   - apiVersion: v2
     appVersion: 0.14.0
@@ -28,4 +53,4 @@ entries:
     urls:
     - https://github.com/helmpages/helm/releases/download/tm-node-0.62.0/tm-node-0.62.0.tgz
     version: 0.62.0
-generated: "2021-12-02T01:32:36.43249059Z"
+generated: "2021-12-02T21:38:03.070252668Z"
