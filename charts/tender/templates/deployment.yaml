@@ -21,7 +21,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
-      {{- if .Values.configurationFile }}
+      {{- if .Values.configurationFiles }}
       initContainers:
         - name: copy-bitcoind-config
           image: busybox
@@ -50,13 +50,13 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /bitcoin
-            {{- if .Values.configurationFile }}
+            {{- if .Values.configurationFiles }}
             - name: config
               mountPath: /bitcoin/.bitcoin/bitcoin.conf
               subPath: bitcoin.conf
             {{- end }}
       volumes:
-        {{- if .Values.configurationFile }}
+        {{- if .Values.configurationFiles }}
         - name: config
           emptyDir: {}
         - name: configmap

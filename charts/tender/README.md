@@ -56,7 +56,7 @@ Parameter                 	 	| Description                        				| Default
 `persistence.accessMode`   		| ReadWriteOnce or ReadOnly          				| `ReadWriteOnce`
 `persistence.size`         		| Size of persistent volume claim    				| `300Gi`
 `resources`                		| CPU/Memory resource requests/limits				| `{}`
-`configurationFile`        		| Config file ConfigMap entry      				    |
+`configurationFiles`        		| Config file ConfigMap entry      				    |
 `terminationGracePeriodSeconds` | Wait time before forcefully terminating container | `30`
 
 For more information about Bitcoin configuration please see [Bitcoin.conf_Configuration_File](https://en.bitcoin.it/wiki/Running_Bitcoin#Bitcoin.conf_Configuration_File).
@@ -85,7 +85,7 @@ Please NOT use emptyDir for production cluster! Your wallets will be lost on con
 ## Customize bitcoind configuration file
 
 ```yaml
-configurationFile:
+configurationFiles:
   bitcoind.conf: |-
     server=1
     printtoconsole=1
