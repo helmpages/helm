@@ -20,6 +20,15 @@ entries:
   tender:
   - apiVersion: v1
     appVersion: 0.17.1
+    created: "2021-12-02T23:06:48.861036476Z"
+    description: Synapse Chain
+    digest: 56e495f1ddbefb8f69d8463931628c6ac723ae17f18d27243b585c5b2564606b
+    name: tender
+    urls:
+    - https://github.com/helmpages/helm/releases/download/tender-0.2.4/tender-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v1
+    appVersion: 0.17.1
     created: "2021-12-02T21:38:03.070246668Z"
     description: Bitcoin is an innovative payment network and a new kind of money.
     digest: 6466c98cae83d4e35245cc2ae24a12f112012bff3823c55b25ace613bcafd785
@@ -53,4 +62,4 @@ entries:
     urls:
     - https://github.com/helmpages/helm/releases/download/tm-node-0.62.0/tm-node-0.62.0.tgz
     version: 0.62.0
-generated: "2021-12-02T21:38:03.070252668Z"
+generated: "2021-12-02T23:06:48.861043976Z"
