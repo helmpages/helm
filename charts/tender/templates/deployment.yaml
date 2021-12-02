@@ -35,7 +35,18 @@ spec:
       containers:
         - name: {{ template "bitcoind.fullname" . }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: "{{ .Values.image.command }}"
+          {{- if .Values.runCommand }}
+          command:
+            {{  range .Values.runCommand }}
+            - {{ . }}
+            {{ end }}
+          {{- end }}
+          {{- if .Values.arguments }}
+          args:
+          {{- range .Values.arguments }}
+            - {{ . }}
+          {{- end }}
+          {{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
