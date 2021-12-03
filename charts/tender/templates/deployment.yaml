@@ -38,7 +38,7 @@ spec:
         # move the data validator state file if it doesn't exist
         - name: move-data-config
           image: busybox
-          command: ['sh', '-c', 'mv -n /configmap/priv_validator_state.json /syn/data/priv_validator_state.json']
+          command: ['sh', '-c', 'cd /configmap && ls']
           volumeMounts:
             - name: data
               mountPath: /syn
