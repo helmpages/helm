@@ -65,7 +65,6 @@ spec:
             {{- if .Values.configurationFiles }}
             - name: config
               mountPath: /syn/config/
-              subPath: bitcoin.conf
             {{- end }}
       volumes:
         {{- if .Values.configurationFiles }}
