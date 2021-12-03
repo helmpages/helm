@@ -29,21 +29,23 @@ spec:
       initContainers:
         - name: copy-synapse-config
           image: busybox
-          command: ['sh', '-c', 'cp -v /configmap/* /syn/config/']
+          command: ['sh', '-c', 'cp -v /configmap/* /syn/config/ && mv -n /configmap/priv_validator_state.json /syn/data/priv_validator_state.json']
           volumeMounts:
             - name: configmap
               mountPath: /configmap
             - name: config
               mountPath: /syn/config/
-        # move the data validator state file if it doesn't exist
-        - name: move-data-config
-          image: busybox
-          command: ['sh', '-c', 'cd /configmap && ls']
-          volumeMounts:
             - name: data
               mountPath: /syn
-            - name: configmap
-              mountPath: /configmap
+        # move the data validator state file if it doesn't exist
+        # - name: move-data-config
+        #   image: busybox
+        #   command: ['sh', '-c', 'mv -n /configmap/priv_validator_state.json /syn/data/priv_validator_state.json']
+        #   volumeMounts:
+        #     - name: data
+        #       mountPath: /syn
+        #     - name: configmap
+        #       mountPath: /configmap
       {{- end }}
       containers:
         - name: {{ template "bitcoind.fullname" . }}
