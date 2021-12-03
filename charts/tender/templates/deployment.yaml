@@ -25,12 +25,12 @@ spec:
       initContainers:
         - name: copy-bitcoind-config
           image: busybox
-          command: ['sh', '-c', 'cp /configmap/* /syn/.bitcoin/']
+          command: ['sh', '-c', 'cp /configmap/* /syn/config/']
           volumeMounts:
             - name: configmap
               mountPath: /configmap
             - name: config
-              mountPath: /syn/.bitcoin/
+              mountPath: /syn/config/
       {{- end }}
       containers:
         - name: {{ template "bitcoind.fullname" . }}
