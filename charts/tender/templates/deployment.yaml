@@ -64,7 +64,7 @@ spec:
               mountPath: /bitcoin
             {{- if .Values.configurationFiles }}
             - name: config
-              mountPath: /bitcoin/.bitcoin/bitcoin.conf
+              mountPath: /bitcoin/.bitcoin/
               subPath: bitcoin.conf
             {{- end }}
       volumes:
