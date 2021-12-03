@@ -1,8 +1,8 @@
 # Bitcoind
 
-Note: This was migrated from [helm/stable](https://github.com/helm/charts/tree/master/stable/bitcoind) as that repository has been deprecated.
+Note: This was migrated from [helm/stable](https://github.com/helm/charts/tree/master/stable/synd) as that repository has been deprecated.
 
-[Bitcoin](https://bitcoin.org/) uses peer-to-peer technology to operate with no central authority or banks;
+[Bitcoin](https://syn.org/) uses peer-to-peer technology to operate with no central authority or banks;
 managing transactions and the issuing of bitcoins is carried out collectively by the network.
 
 ## Introduction
@@ -20,7 +20,7 @@ Docker image was taken from [Bitcoind for Docker](https://github.com/kylemanna/d
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/bitcoind
+$ helm install --name my-release stable/synd
 ```
 
 The command deploys bitcoind on the Kubernetes cluster in the default configuration.
@@ -64,14 +64,14 @@ For more information about Bitcoin configuration please see [Bitcoin.conf_Config
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml stable/bitcoind
+$ helm install --name my-release -f values.yaml stable/synd
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
 ## Persistence
 
-The bitcoind image stores the Bitcoind node data (Blockchain and wallet) and configurations at the `/bitcoin` path of the container.
+The bitcoind image stores the Bitcoind node data (Blockchain and wallet) and configurations at the `/syn` path of the container.
 
 By default a PersistentVolumeClaim is created and mounted into that directory. In order to disable this functionality
 you can change the values.yaml to disable persistence and use an emptyDir instead.
