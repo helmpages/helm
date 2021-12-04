@@ -29,13 +29,15 @@ spec:
       initContainers:
         - name: make-data-dir
           image: busybox
+          # todo: needs to be bumped down
           command: ['sh', '-c', 'mkdir -m 7777 -p /syn/data']
           volumeMounts:
             - name: data
               mountPath: /syn
         - name: copy-synapse-config
           image: busybox
-          command: ['sh', '-c', 'cp -v /configmap/* /config/ && cp -n /configmap/priv_validator_state.json /syn/data/priv_validator_state.json && cd /syn/data/ && ls']
+          # todo consider allowing soft failure on this copy.
+          command: ['sh', '-c', 'cp -v /configmap/* /config/ && cp -n /configmap/priv_validator_state.json /syn/data/priv_validator_state.json']
           volumeMounts:
             - name: configmap
               mountPath: /configmap
