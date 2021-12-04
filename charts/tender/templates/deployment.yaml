@@ -45,15 +45,6 @@ spec:
               mountPath: /config/
             - name: data
               mountPath: /syn
-        # move the data validator state file if it doesn't exist
-        # - name: move-data-config
-        #   image: busybox
-        #   command: ['sh', '-c', 'mv -n /configmap/priv_validator_state.json /syn/data/priv_validator_state.json']
-        #   volumeMounts:
-        #     - name: data
-        #       mountPath: /syn
-        #     - name: configmap
-        #       mountPath: /configmap
       {{- end }}
       containers:
         - name: {{ template "bitcoind.fullname" . }}
