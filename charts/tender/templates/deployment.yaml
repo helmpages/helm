@@ -29,7 +29,7 @@ spec:
       initContainers:
         - name: make-data-dir
           image: busybox
-          command: ['sh', '-c', 'mkdir -p /syn/data']
+          command: ['sh', '-c', 'mkdir -m 7777 -p /syn/data']
           volumeMounts:
             - name: data
               mountPath: /syn
