@@ -46,6 +46,17 @@ spec:
             - name: data
               mountPath: /syn
       {{- end }}
+        - name: debug-synapse-config
+          image: busybox
+          # todo consider allowing soft failure on this copy.
+          command: ['sh', '-c', 'cd /syn && ls && cd /syn/config && ls && cd /syn/data && ls']
+          volumeMounts:
+            - name: data
+              mountPath: /syn
+            {{- if .Values.configurationFiles }}
+            - name: config
+              mountPath: /syn/config/
+            {{- end }}
       containers:
         - name: {{ template "bitcoind.fullname" . }}
           securityContext:
