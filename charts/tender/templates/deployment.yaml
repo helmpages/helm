@@ -78,14 +78,16 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           ports:
-            - name: rpc
-              containerPort: {{ .Values.service.rpcPort }}
+            - name: api
+              containerPort: {{ .Values.service.apiPort }}
             - name: p2p
               containerPort: {{ .Values.service.p2pPort }}
-            - name: testnet
-              containerPort: {{ .Values.service.testnetPort }}
-            - name: testnetp2pport
-              containerPort: {{ .Values.service.testnetP2pPort }}
+            - name: rpc
+              containerPort: {{ .Values.service.rpc }}
+            - name: rosetta
+              containerPort: {{ .Values.service.rosetta }}
+            - name: grpc
+              containerPort: {{ .Values.service.grpc }}
           volumeMounts:
             - name: data
               mountPath: /syn
