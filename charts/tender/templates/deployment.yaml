@@ -83,11 +83,11 @@ spec:
             - name: p2p
               containerPort: {{ .Values.service.p2pPort }}
             - name: rpc
-              containerPort: {{ .Values.service.rpc }}
+              containerPort: {{ .Values.service.rpcPort }}
             - name: rosetta
-              containerPort: {{ .Values.service.rosetta }}
+              containerPort: {{ .Values.service.rosettaPort }}
             - name: grpc
-              containerPort: {{ .Values.service.grpc }}
+              containerPort: {{ .Values.service.grpcPort }}
           volumeMounts:
             - name: data
               mountPath: /syn
