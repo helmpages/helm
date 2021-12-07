@@ -19,10 +19,10 @@ spec:
       port: {{ .Values.service.rpcPort }}
       targetPort: rpc
     - name: rosetta
-      port: {{ .Values.service.rosetta }}
+      port: {{ .Values.service.rosettaPort }}
       targetPort: rosetta
     - name: grpc
-      port: {{ .Values.service.grpc }}
+      port: {{ .Values.service.grpcPort }}
       targetPort: grpc
   selector:
     app: {{ template "bitcoind.name" . }}
