@@ -2,11 +2,11 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "bitcoind.fullname" . }}
+  name: {{ template "synchain.fullname" . }}
   annotations:
     "helm.sh/resource-policy": keep
   labels:
-    app: {{ template "bitcoind.name" . }}
+    app: {{ template "synchain.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"

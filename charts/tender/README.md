@@ -1,4 +1,4 @@
-# Bitcoind
+# synchain
 
 Note: This was migrated from [helm/stable](https://github.com/helm/charts/tree/master/stable/synd) as that repository has been deprecated.
 
@@ -8,7 +8,7 @@ managing transactions and the issuing of bitcoins is carried out collectively by
 ## Introduction
 
 This chart bootstraps a single node Bitcoin deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
-Docker image was taken from [Bitcoind for Docker](https://github.com/kylemanna/docker-bitcoind) - many thanks!
+Docker image was taken from [synchain for Docker](https://github.com/kylemanna/docker-synchain) - many thanks!
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ To install the chart with the release name `my-release`:
 $ helm install --name my-release stable/synd
 ```
 
-The command deploys bitcoind on the Kubernetes cluster in the default configuration.
+The command deploys synchain on the Kubernetes cluster in the default configuration.
 The [configuration](#configuration) section lists the parameters that can be configured during installation.
 
 > **Tip**: List all releases using `helm list`
@@ -40,12 +40,12 @@ The command removes all the Kubernetes components associated with the chart and 
 
 ## Configuration
 
-The following table lists the configurable parameters of the bitcoind chart and their default values.
+The following table lists the configurable parameters of the synchain chart and their default values.
 
 Parameter                 	 	| Description                        				| Default
 ------------------------------- | ------------------------------------------------- | ----------------------------------------------------------
-`image.repository`         		| Image source repository name       				| `arilot/docker-bitcoind`
-`image.tag`                		| `bitcoind` release tag.            				| `0.17.1`
+`image.repository`         		| Image source repository name       				| `arilot/docker-synchain`
+`image.tag`                		| `synchain` release tag.            				| `0.17.1`
 `image.pullPolicy`         		| Image pull policy                  				| `IfNotPresent`
 `service.rpcPort`          		| RPC port                           				| `8332`
 `service.p2pPort`          		| P2P port                           				| `8333`
@@ -71,7 +71,7 @@ $ helm install --name my-release -f values.yaml stable/synd
 
 ## Persistence
 
-The bitcoind image stores the Bitcoind node data (Blockchain and wallet) and configurations at the `/syn` path of the container.
+The synchain image stores the synchain node data (Blockchain and wallet) and configurations at the `/syn` path of the container.
 
 By default a PersistentVolumeClaim is created and mounted into that directory. In order to disable this functionality
 you can change the values.yaml to disable persistence and use an emptyDir instead.
@@ -82,11 +82,11 @@ you can change the values.yaml to disable persistence and use an emptyDir instea
 
 Please NOT use emptyDir for production cluster! Your wallets will be lost on container restart!
 
-## Customize bitcoind configuration file
+## Customize synchain configuration file
 
 ```yaml
 configurationFiles:
-  bitcoind.conf: |-
+  synchain.conf: |-
     server=1
     printtoconsole=1
     rpcuser=rpcuser

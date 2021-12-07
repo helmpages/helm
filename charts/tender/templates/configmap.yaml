@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "bitcoind.fullname" . }}
+  name: {{ template "synchain.fullname" . }}
   labels:
-    app: {{ template "bitcoind.name" . }}
-    chart: {{ template "bitcoind.chart" . }}
+    app: {{ template "synchain.name" . }}
+    chart: {{ template "synchain.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:

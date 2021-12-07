@@ -1,9 +1,9 @@
-# Default values for bitcoind.
+# Default values for synchain.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 terminationGracePeriodSeconds: 30
 image:
-  repository: arilot/docker-bitcoind
+  repository: arilot/docker-synchain
   tag: 0.17.1
   pullPolicy: IfNotPresent
 
@@ -34,7 +34,7 @@ resources: {}
 #    memory: 512Mi
 #    cpu: 300m
 
-# Custom bitcoind configuration file used to override default bitcoind settings
+# Custom synchain configuration file used to override default synchain settings
 configurationFiles:
   genesis.json: |-
     server=1
