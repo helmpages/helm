@@ -12,6 +12,7 @@ service:
   p2pPort: 8333
   testnetPort: 18332
   testnetP2pPort: 18333
+  type: ClusterIP
 
 persistence:
   enabled: true
