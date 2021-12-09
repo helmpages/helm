@@ -20,6 +20,15 @@ entries:
   tender:
   - apiVersion: v1
     appVersion: 0.17.2
+    created: "2021-12-09T01:14:39.610007816Z"
+    description: Synapse Chain
+    digest: f66e4340801cc0575e23b04f806f640e438e4f5cf18b5e753b5e21fcdea63c8a
+    name: tender
+    urls:
+    - https://github.com/helmpages/helm/releases/download/tender-0.4.9/tender-0.4.9.tgz
+    version: 0.4.9
+  - apiVersion: v1
+    appVersion: 0.17.2
     created: "2021-12-08T08:40:04.734661661Z"
     description: Synapse Chain
     digest: 3c6d2090e0ba8e4286fd98f775dbe4826dc7e33d92a85534d4ca56c0170014c3
@@ -350,4 +359,4 @@ entries:
     urls:
     - https://github.com/helmpages/helm/releases/download/tm-node-0.62.0/tm-node-0.62.0.tgz
     version: 0.62.0
-generated: "2021-12-08T08:40:04.735009661Z"
+generated: "2021-12-09T01:14:39.6158964Z"
