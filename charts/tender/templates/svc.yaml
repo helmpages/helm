@@ -7,6 +7,8 @@ metadata:
     chart: {{ template "synchain.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+
 spec:
   type: {{ .Values.service.type | quote }}
   ports:
