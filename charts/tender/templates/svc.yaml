@@ -21,6 +21,9 @@ spec:
     - name: rpc
       port: {{ .Values.service.rpcPort }}
       targetPort: rpc
+    - name: ws
+      port: {{ .Values.service.wsPort }}
+      targetPort: ws
     - name: rosetta
       port: {{ .Values.service.rosettaPort }}
       targetPort: rosetta

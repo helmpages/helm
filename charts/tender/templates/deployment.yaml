@@ -77,6 +77,8 @@ spec:
               containerPort: {{ .Values.service.rosettaPort }}
             - name: grpc
               containerPort: {{ .Values.service.grpcPort }}
+            - name: ws
+              containerPort: {{ .Values.service.wsPort }}
           volumeMounts:
             - name: data
               mountPath: /syn
