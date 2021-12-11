@@ -6,8 +6,6 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   namespace:  {{ .Release.Namespace }}
-  labels:
-    {{- include "synchain.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
